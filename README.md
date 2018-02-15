@@ -1,7 +1,7 @@
-##Grapher PoC
+## Grapher PoC
 
 
-[![demo](https://github.com/ryanehlers/grapher-test/raw/master/screenshot.png)]
+[!(screenshot.png)]
 
 Generated with create-react-app. To build, `yarn install` then `yarn start`.
 
