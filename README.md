@@ -1,7 +1,7 @@
 ## Grapher PoC
 
 
-[!(./screenshot.png)]
+[![screenshot](./screenshot.png)]
 
 Generated with create-react-app. To build, `yarn install` then `yarn start`.
 
