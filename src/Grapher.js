@@ -7,6 +7,8 @@ class Grapher extends Component {
     super(props);
     this.plotFunction = this.plotFunction.bind(this);
     this.setStyle = this.setStyle.bind(this);
+    this.zoom = toBool(this.props.zoom);
+    this.showCoords = toBool(this.props.showCoords);
   }
 
   componentDidMount(){
@@ -18,15 +20,15 @@ class Grapher extends Component {
     functionPlot({
       target: '#' + this.props.graphId,
       grid: true,
-      disableZoom: true,
+      disableZoom: !this.zoom,
       data: [
-        { fn: this.props.formula, color: '#DB0066', skipTip: true }
+        { fn: this.props.formula, color: '#DB0066', skipTip: !this.showCoords }
       ]
-    })
+    });
   }
 
   setStyle() {
-    setGrapherStyle(this.props.graphId);
+    setGrapherStyle(this.props.graphId, this.zoom);
   }
 
   render() {
@@ -38,3 +40,11 @@ class Grapher extends Component {
 }
 
 export default Grapher;
+
+function toBool(boolString) {
+  if(boolString === 'true') {
+    return true;
+  } else {
+    return false;
+  }
+}
